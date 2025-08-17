@@ -7,7 +7,8 @@ const main = document.querySelector('main');
 const menuLinks = document.querySelector('#Menulinks');
 const cancelIcon = document.querySelector('.cancelIcon')
 
-hamburgerBtn.addEventListener('click', ()=>{
+hamburgerBtn.addEventListener('click', (e)=>{
+    e.stopPropagation()
     menuLinks.classList.add('activeMenues');
     cancelIcon.classList.add('show');
 
@@ -17,13 +18,16 @@ hamburgerBtn.addEventListener('click', ()=>{
 
 });
 
+menuLinks.addEventListener('click', (e)=>{
+    e.stopPropagation();
+});
+
 cancelIcon.addEventListener('click', removeAnchorLinks);
-    
-main.addEventListener('click', removeAnchorLinks);
+
+window.addEventListener('click', removeAnchorLinks);
 
 function removeAnchorLinks(){
     cancelIcon.classList.remove('show');
     hamburgerBtn.classList.remove('hide');
     menuLinks.classList.add('move');
 }
-
