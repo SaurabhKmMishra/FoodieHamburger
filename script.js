@@ -1,3 +1,7 @@
+  document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('loading', 'lazy');
+  });
+
 const hamburgerBtn = document.querySelector('.hamburger');
 const main = document.querySelector('main');
 const menuLinks = document.querySelector('#Menulinks');
@@ -22,3 +26,4 @@ function removeAnchorLinks(){
     hamburgerBtn.classList.remove('hide');
     menuLinks.classList.add('move');
 }
+
